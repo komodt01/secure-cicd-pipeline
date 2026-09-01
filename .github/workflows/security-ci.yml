@@ -12,4 +12,6 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
       
-      
+      - name: Run security gate simulation
+        run: python3 app.py
+          
