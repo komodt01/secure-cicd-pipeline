@@ -1,0 +1,15 @@
+name:  Security CI   
+
+on:  
+  push:
+    branches:
+      - main
+jobs:
+  security-check:
+    runs-on: ubuntu-latest
+    
+    steps:  
+      - name: Check out repository
+        uses: actions/checkout@v4
+      
+      
