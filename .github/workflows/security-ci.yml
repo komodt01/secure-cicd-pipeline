@@ -14,4 +14,7 @@ jobs:
       
       - name: Run security gate simulation
         run: python3 app.py
+
+      - name: Scan repository for secrets
+        uses: gitleaks/gitleaks-action@v2
           
