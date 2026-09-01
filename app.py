@@ -26,7 +26,7 @@ security_findings = [
     "tool": "SCA",
 },
 {   "name": "Hard-coded password",  
-    "severity": "Critical",
+    "severity": "Low",
     "tool": "Secret Scanner",
 }
 ]
