@@ -56,6 +56,3 @@ if overall_decision == "BLOCK":
 else:
     sys.exit(0)
 
-import subprocess
-
-subprocess.call("ls", shell=True)
