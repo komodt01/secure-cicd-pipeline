@@ -17,4 +17,10 @@ jobs:
 
       - name: Scan repository for secrets
         uses: gitleaks/gitleaks-action@v2
+
+      - name: Install Bandit
+        run: pip install bandit
+
+      - name: Run SAST scan with Bandit
+        run: bandit app.py 
           
