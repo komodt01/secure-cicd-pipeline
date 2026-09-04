@@ -29,4 +29,10 @@ jobs:
 
       - name: Run dependency vulnerability scan
         run: pip-audit -r requirements.txt
+
+      - name: Install Checkov
+        run: pip install checkov
+
+      - name: Run Infrastructure as Code scan
+        run: checkov -d infrastructure 
           
