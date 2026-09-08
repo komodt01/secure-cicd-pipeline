@@ -33,12 +33,6 @@ jobs:
       - name: Install Checkov
         run: pip install checkov
 
-      - name: Run Infrastructure as Code scan
-        run: checkov -d infrastructure 
-
-      - name: Install Checkhov
-        run: pip install checkov
-
       - name: Run Infrastructure as Code 
         run: checkov -d infrastructure
         continue-on-error: true
