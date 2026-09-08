@@ -41,3 +41,9 @@ jobs:
 
       -name : Run Infrastructure as Code  
         run: checkov -d infrastructure
+
+      -name: Build container image
+        run: docker build -t secure-cicd-demo .
+
+      -name: Scan container image
+        run: docker scout cves secure-cicd-demo:latest --only-severity critical,high --exit-code  
