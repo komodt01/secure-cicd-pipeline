@@ -51,6 +51,9 @@ jobs:
           curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s --
 
       - name: Scan container image
-        run: docker scout cves secure-cicd-demo:latest --only-severity critical,high --exit-code
+        run: docker scout cves secure-cicd-demo:latest --only-severity critical,high --format sarif --output scout-results.sarif 
 
+
+      - name: Evaluate security exceptions
+        run: python3 exceptions_check.py
  

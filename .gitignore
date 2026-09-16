@@ -8,4 +8,4 @@ venv/
 
 # Environment files / local secrets
 .env
-.env.*
+.env.*scout-results.sarif
