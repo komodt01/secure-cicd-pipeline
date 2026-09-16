@@ -55,5 +55,5 @@ jobs:
 
 
       - name: Evaluate security exceptions
-        run: python3 exceptions_check.py
+        run: python3 exception_check.py
  
