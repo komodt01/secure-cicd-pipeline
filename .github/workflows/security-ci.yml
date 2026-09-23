@@ -37,12 +37,6 @@ jobs:
         run: checkov -d infrastructure
         continue-on-error: true
      
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v3
-        with:
-         username: ${{ secrets.DOCKER_USERNAME }}
-         password: ${{ secrets.DOCKER_TOKEN }}
-     
       - name: Build container image
         run: docker build -t secure-cicd-demo .
 
@@ -52,7 +46,6 @@ jobs:
 
       - name: Scan container image
         run: docker scout cves secure-cicd-demo:latest --only-severity critical,high --format sarif --output scout-results.sarif 
-
 
       - name: Evaluate security exceptions
         run: python3 exception_check.py
