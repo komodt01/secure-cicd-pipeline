@@ -8,7 +8,7 @@
       "source": "Docker Scout",
       "reason": "No fixed version currently available",
       "business_justification": "Deployment is required while no vendor-fixed version is available",
-      "risk": "Pending security assessment",
+      "risk": "High-severity vulnerability remains present in the container image until a vendor-fixed package becomes available",",
       "compensating_controls": [],
       "owner": "Application Team",
       "security_reviewer": "Security Architecture",
