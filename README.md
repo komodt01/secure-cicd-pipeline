@@ -199,7 +199,7 @@ This project reinforced several security architecture principles.
 * **Centralized controls provide stronger enforcement.** Local scanning gives developers fast feedback, while the CI pipeline provides a consistent control that does not depend on an individual developer remembering to run a tool.
 * **Build artifacts introduce additional risk.** Source-code scanning alone does not identify vulnerabilities inherited from the container base image or operating-system packages.
 * **Vulnerability information changes over time.** An image that passes today may fail later as new vulnerabilities are identified, making continuous scanning important.
-* **Machine identities require controlled credentials.** The GitHub Actions runner required its own non-interactive authentication to Docker rather than relying on a developer's local login.
+* **Unnecessary credentials should be eliminated. The container image is built and scanned locally within the CI job and is not pushed to an external registry. Because registry authentication is not required for the implemented workflow, the Docker Hub credential and login step were removed, reducing unnecessary secret exposure and eliminating an unused external trust relationship.
 * **Secret protection requires multiple layers.** Repository scanning detects exposed credentials, while GitHub Push Protection demonstrated how a preventive control can stop a credential before it reaches the remote repository.
 
 ## Production Considerations
