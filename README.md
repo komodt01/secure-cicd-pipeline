@@ -175,7 +175,7 @@ The remaining findings represent remediation work rather than a pipeline failure
 
 The repository separates application logic, security policy, exception data, infrastructure configuration, and pipeline automation.
 
-* `app.py` — Demo Python application and initial security decision logic.
+* `app.py` — Demo Python application used as the source artifact evaluated by pipeline security controls.
 * `security_policy.py` — Defines severity-based security policy decisions.
 * `exception_check.py` — Evaluates Docker Scout findings against approved security exceptions and determines the aggregate container security decision.
 * `security-exceptions.json` — Stores structured, time-bound vulnerability exception records.
