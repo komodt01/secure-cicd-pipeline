@@ -109,9 +109,8 @@ This creates the enforcement path:
 
 **Security Finding → Policy Decision → Exception Evaluation → Aggregate Decision → Exit Code → CI Enforcement**
 
-## Architecture Decisions
-
-Several design decisions were intentionally made during this project.
+**Separate detection from exception enforcement.**
+Docker Scout identifies Critical and High container vulnerabilities according to the configured pipeline threshold. The Python exception gate then evaluates those blocking findings against the approved exception registry and determines whether unresolved findings require the pipeline to remain blocked.
 
 **Separate detection from enforcement.**
 Security scanners identify findings, but the scanner itself does not necessarily determine the organization's risk decision. Docker Scout produces the vulnerability findings, while separate Python policy logic determines whether those findings should block the pipeline.
